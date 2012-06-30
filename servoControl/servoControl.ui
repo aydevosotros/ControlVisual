@@ -32,7 +32,7 @@
        <item>
         <widget class="QLabel" name="label">
          <property name="text">
-          <string>TextLabel</string>
+          <string>0</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -46,6 +46,9 @@
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
+         </property>
+         <property name="maximum">
+          <number>179</number>
          </property>
          <property name="orientation">
           <enum>Qt::Vertical</enum>
@@ -66,7 +69,7 @@
        <item>
         <widget class="QLabel" name="label_2">
          <property name="text">
-          <string>TextLabel</string>
+          <string>0</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -80,6 +83,9 @@
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
+         </property>
+         <property name="maximum">
+          <number>179</number>
          </property>
          <property name="orientation">
           <enum>Qt::Vertical</enum>

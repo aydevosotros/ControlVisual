@@ -1,4 +1,3 @@
-
 import sys
 import serial   
 from PyQt4 import QtCore, QtGui, uic
@@ -19,24 +18,28 @@ class StartQT4(QtGui.QMainWindow):
         QtCore.QObject.connect(self.ui.verticalSlider_2, QtCore.SIGNAL("valueChanged(int)"), self.slider2)
     
     def slider1(self, value):
+        self.ui.label.setText(str(value))
         self.serial.write(chr(1))
         self.serial.write(chr(value))
         
     def slider2(self, value):
+        self.ui.label_2.setText(str(value))
         self.serial.write(chr(2))
         self.serial.write(chr(value))
         
 
 if __name__ == '__main__':
     
-        s = serial.Serial('/dev/ttyACM1', 9600, timeout=1, stopbits=1)       
+        s = serial.Serial('/dev/ttyACM1', 9600, timeout=1, stopbits=1) 
+        if(not s.isOpen()):      
+            s.open()
         
-        #Working with user interface
+        '''Working with user interface'''
         app = QtGui.QApplication(sys.argv)
         myapp = StartQT4()
         myapp.setSerial(s)
         myapp.show()
-        s.close()
         sys.exit(app.exec_())
+        s.close()
         
         
